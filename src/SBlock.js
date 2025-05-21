@@ -1,43 +1,32 @@
-class SBlock {
 
-    y = 1;
-    x = 5;
+import { Block } from "./Block.js";
 
-    shapeIndex = 0;
-
-    height = 2;
+class SBlock extends Block {
 
     shapes = [
-        {
-            height: 2,
-            shape: [
-                [0, 1], [0, 2], [1, 0], [1, 1]
-            ]
-        }
+        {   
+            'height': 2,
+            'width': 3,
+            'shape': [[0, 1], [0, 2], [1, 0], [1, 1]],
+        },
+        {   
+            'height': 3,
+            'width': 2,
+            'shape': [[0, 0], [1, 0], [1, 1], [2, 1]],
+        },
     ];
 
     class = 's-block';
 
-    moveDown() {
-        this.y++;   
+    constructor ( gb ) {
+        
+        super();
+
+        this.y = 0 - this.shapes[0].height;
+        this.x = Math.floor((gb.width - this.shapes[0].width) / 2);
+    
     }
-
-    canMoveDown (gameBoardHeight) {
-        if (this.y + this.shapes[this.shapeIndex].height == gameBoardHeight) {
-            return false;
-        }
-
-        return true
-    }
-
-    stop( gameBoard ){
-        this.shapes[this.shapeIndex].shape.forEach(el => {
-        const y = el[0] + this.y;
-        const x = el[1] + this.x;
-
-        gameBoard.state[y][x] = this.class
-        });
-    }
+    
 }
 
 export { SBlock }

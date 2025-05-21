@@ -1,23 +1,23 @@
 
 import { Block } from "./Block.js";
 
-class ZBlock extends Block {
+class IBlock extends Block {
 
     shapes = [
         {   
-            'height': 2,
-            'width': 3,
-            'shape': [[0, 0], [0, 1], [1, 1], [1, 2]]
+            'height': 4,
+            'width': 1,
+            'shape': [[0, 0], [1, 0], [2, 0], [3, 0]]
         },
         {   
-            'height': 3,
-            'width': 2,
-            'shape': [[0, 1], [1, 0], [1, 1], [2, 0]]
+            'height': 1,
+            'width': 4,
+            'shape': [[0, 0], [0, 1], [0, 2], [0, 3]]
         },
     ];
 
-    class = 'z-block';
-    
+    class = 'i-block';
+
     constructor ( gb ) {
         
         super();
@@ -26,7 +26,7 @@ class ZBlock extends Block {
         this.x = Math.floor((gb.width - this.shapes[0].width) / 2);
     
     }
-    
+
 }
 
-export { ZBlock }
+export { IBlock }

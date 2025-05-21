@@ -1,9 +1,9 @@
+
 body {
     margin: 0;
 }
 
 .main {
-
     height: 100vh;
     margin: auto;
     display: flex;
@@ -16,19 +16,48 @@ body {
 #game-board {
     display: grid;
     grid-gap: 1px;
-    background-color: #ffffff;
-    border: 2px solid #201218;
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+}
+
+#game-over {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 #game-board div {
-    background-color: black;
+    background-color: white;
     font-size: 10px;
 }
 
-#game-board div.s-block{
+#game-board div.s-block {
     background-color: red;
 }
 
-#game-board div.z-block{
+#game-board div.z-block {
     background-color: green;
+}
+
+#game-board div.l-block {
+    background-color: orange;
+}
+
+#game-board div.j-block {
+    background-color: blue;
+}
+
+#game-board div.o-block {
+    background-color: yellow;
+}
+
+#game-board div.t-block {
+    background-color: purple;
+}
+
+#game-board div.i-block {
+    background-color: cyan;
 }

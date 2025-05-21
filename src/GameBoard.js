@@ -1,8 +1,9 @@
+
 class GameBoard {
     
     gameBoardDiv = document.getElementById('game-board');
-    width = 12;
-    height = 24;
+    width = 10;
+    height = 18;
 
     state = Array.from(new Array(this.height), () => Array.from(new Array(this.width), () => ''));
 
@@ -23,19 +24,22 @@ class GameBoard {
         
                 const cellDiv = document.createElement('div');
 
+                console.log(this.state);
+
                 const cellClass = this.state[y][x];
-                if (cellClass) {
-                    cellDiv.classList.add(cellClass)
+                if ( cellClass ) {
+                    cellDiv.classList.add(cellClass);
                 }
 
                 const shape = block.shapes[block.shapeIndex].shape;
 
-                shape.forEach(el => {
-                    if ( y == el[0] + block.y && x == el[1] + block.x){
-                        cellDiv.classList.add(block.class)
+                shape.forEach( el => {
+                    if ( y == el[0] + block.y && x == el[1] + block.x ) {
+                        cellDiv.classList.add(block.class);
                     }
                 });
-                
+
+        
                 this.gameBoardDiv.appendChild(cellDiv);
         
             }
@@ -43,5 +47,24 @@ class GameBoard {
         }
         
     }
+
+    gameOver () {
+
+        const gameOverDiv = document.getElementById('game-over');
+        
+        gameOverDiv.classList.remove('hidden');
+
+    }
+
+    removeFullRows () {
+
+        this.state.forEach( ( row, i ) => {
+            // wip
+            row.every( cell => cell )
+        });
+
+    }
+
 }
+
 export { GameBoard }
